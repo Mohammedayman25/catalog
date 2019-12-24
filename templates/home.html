@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='home.css') }}">
+    <title>Home</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+    <div class="container">
+        <div class='flash'>
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+        </div>
+        <div class="main">
+
+            <div class="categories">
+                <h1>Categories</h1>
+                {%for i in categories%}
+                <a href="{{url_for('showCategoryItems', cat_id = i.id)}}">{{i.name}}</a>
+                {%endfor%}
+            </div>
+            <div class="latestItems">
+                <h1>Latest items</h1>
+                {%for i in latestItems%}
+                <div class="item">
+                    <a href="{{url_for('showItem', cat_id=i[2], item_id=i[3])}}">{{i[0]}}</a>
+                    <span>({{i[1]}})</span>
+                </div>
+                {%endfor%}
+                {%if 'username' in session%}
+                <div class="add">
+                    <a href="{{url_for('addItem')}}">Add item</a>
+                </div>
+                {%endif%}
+            </div>
+            <div class="clear-fix"></div>
+        </div>
+    </div>
+</body>
+
+</html>

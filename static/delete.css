@@ -1,0 +1,25 @@
+form button {
+    margin-top: 20px;
+    padding: 5px 20px;
+    background-color: #f22b00;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+form a {
+    display: inline-block !important;
+    color: white !important;
+    background-color: #f22b00;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 7.5px 20px;
+}
+
+form span {
+    color: #666;
+    font-size: 24px;
+}

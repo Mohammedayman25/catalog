@@ -1,0 +1,11 @@
+<nav>
+    <div class="container">
+        <a href="{{url_for('showHome')}}">Home</a>
+        <h2>Catalog App</h2>
+        {%if 'username' not in session%}
+        <a href="{{url_for('showLogin')}}">Login</a>
+        {%else%}
+        <a href="{{url_for('gdisconnect')}}">Log out</a>
+        {%endif%}
+    </div>
+</nav>

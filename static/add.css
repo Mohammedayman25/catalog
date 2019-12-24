@@ -1,0 +1,12 @@
+form button {
+    display: block;
+    margin-top: 20px;
+    padding: 5px 20px;
+    background-color: #f22b00;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
